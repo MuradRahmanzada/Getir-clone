@@ -1,3 +1,17 @@
+# Getir-clone made with React JS
+H! This a Getir Clone that i´ve built using ReactJS.  
+__You can visit the website clicking <a href="https://getir-clone01.netlify.app/"/>here</a>
+<br/>
+
+I dont own any rights from Facebook as a company, this platform was made for educational purposes and to be shown as a piece of portfolio.
+
+![Screenshot (92)](https://user-images.githubusercontent.com/97960285/176307171-061661da-f31a-4b4c-8029-3cfc052e7546.png)
+![Screenshot (93)](https://user-images.githubusercontent.com/97960285/176307181-4c4cf277-7d0b-43c3-b573-c6a974ff992b.png)
+![Screenshot (94)](https://user-images.githubusercontent.com/97960285/176307186-3e1fa32c-cfff-47d0-91dd-8d893c4bd77d.png)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
