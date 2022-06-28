@@ -4,7 +4,10 @@ import { useWindowWidth } from "@react-hook/window-size";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Menu = ({ title, items }) => {
+  const [itemTitle, setItemTitle] = useState([]);
+
   const [isOpen, setIsOpen] = useState(true);
+
   const windowWidth = useWindowWidth();
 
   const toggleCollapse = () => {
@@ -17,32 +20,39 @@ const Menu = ({ title, items }) => {
     if (isOpen && windowWidth <= 768) {
       setIsOpen(false);
     }
-
-    if (isOpen && windowWidth > 768) {
+    if (!isOpen && windowWidth > 768) {
       setIsOpen(true);
     }
   }, [windowWidth]);
 
+  useEffect(() => {
+    setItemTitle(items);
+  }, []);
+
   return (
     <section>
-      <nav className="grid gap-y-4">
+      <nav className="gap-y-2 md:gap-y-4">
         <h6
           onClick={toggleCollapse}
-          className="text-lg text-brand-color cursor-pointer flex items-center justify-between"
+          className="text-lg text-primary-brand-color flex items-center justify-between mb-2"
         >
           {title}
-          <button className="w-6 h-6 grid md:hidden place-items-center rounded-lg bg-primary-brand-color bg-opacity-10 text-primary-brand-color">
-            <span className={`transition-all transform ${isOpen ? 'rotate-180' : ""}`}>
+          <button className=" md:hidden w-6 h-6 grid place-items-center rounded-lg bg-primary-brand-color bg-opacity-10 text-primary-brand-color">
+            <span
+              className={`transition-all transform ${
+                isOpen ? "-rotate-180" : ""
+              }`}
+            >
               <IoIosArrowDown size={14} />
             </span>
           </button>
         </h6>
         <Collapse isOpened={isOpen}>
           <nav>
-            <ul className="grid gap-y-1 md:gap-y-2">
-              {items.map((item, key) => (
+            <ul className="grid gap-y-2 md:gap-y-3">
+              {itemTitle.map((item, key) => (
                 <li key={key}>
-                  <a href="#" className="text-sm hover:text-brand-color">
+                  <a href="#" className="text-sm">
                     {item.title}
                   </a>
                 </li>
